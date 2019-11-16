@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:Mobile.Views;assembly=Mobile"
+             xmlns:behaviors="clr-namespace:Mobile.Behaviors;assembly=Mobile"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="false"
+             x:Class="Mobile.Views.ItemDetailPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <views:ItemView x:Name="ItemView"
+                Margin="60,10"
+                HorizontalOptions="Center"
+                RelativeLayout.WidthConstraint="{ConstraintExpression
+                    Type=RelativeToView,
+                    Property=Width,
+                    Factor=0.5
+                }" />
+            <Entry x:Name="Amount" Keyboard="Numeric" FontSize="30" HorizontalOptions="Center" HorizontalTextAlignment="Center" Placeholder="Betrag">
+                <Entry.Behaviors>
+                    <behaviors:NumericValidationBehavior />
+                </Entry.Behaviors>
+            </Entry>
+            <Button VerticalOptions="EndAndExpand" x:Name="BtnConfirm" ImageSource="check.png" BackgroundColor="Green" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
